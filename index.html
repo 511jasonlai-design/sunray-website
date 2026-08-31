@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社 SUNRAY (サンレイ)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        sunrayBlue: '#e1f0fa',      /* 全域網頁淺天藍色背景 */
+                        sunrayDarkBlue: '#005bac',  /* 標題與重點文字的深藍色 */
+                        sunrayHeaderBlue: '#0073e6',/* 左側標語區塊的明亮寶藍色背景 */
+                        sunrayBtnBlue: '#007ae6',   /* 按鈕的飽和藍色 */
+                        sunrayText: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 下拉選單動畫 */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-sunrayBlue text-sunrayText antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider text-sunrayDarkBlue">SUNRAY</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600 h-full items-center">
+                <div class="relative group h-full flex items-center">
+                    <a href="products.html" class="hover:text-sunrayDarkBlue transition-colors flex items-center space-x-1 py-2">
+                        <span>Our Products</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu absolute top-[calc(100%-8px)] left-1/2 -translate-x-1/2 w-[520px] bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50">
+                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-semibold">
+                            <a href="pool-robot.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールロボット</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・オリジナルプリントウェア</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・スイムキャップ</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールクリーナー</a>
+                            <a href="lane-maker.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・レーンマーカー</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・感染予防対策アイテム</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・学校用品</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・ビート板</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールフロア</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-gray-300">|</span>
+                <a href="company.html" class="hover:text-sunrayDarkBlue transition-colors">Company Info</a>
+                <span class="text-gray-300">|</span>
+                <a href="contact.html" class="hover:text-sunrayDarkBlue transition-colors">Contact Us</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="w-full grid grid-cols-1 md:grid-cols-2">
+            
+            <div class="bg-sunrayHeaderBlue text-white flex flex-col items-center justify-center p-8 md:p-16 text-center min-h-[400px] md:min-h-[500px]">
+                <div class="mb-6">
+                    <!-- 將 Logo 圖片高度調大 -->
+                    <img src="SUNRAY_white.png" alt="SUNRAY Logo" class="h-44 md:h-56 object-contain mx-auto">
+                </div>
+                
+                <div class="space-y-3 text-sm md:text-base font-medium opacity-90 leading-loose">
+                    <p class="text-xs tracking-widest opacity-75">私たちは</p>
+                    <p>水泳・トレーニング用品、学校用品、</p>
+                    <p>オリジナルプリントウェアを取り扱い、</p>
+                    <p>学校・団体・個人の</p>
+                    <p>お客様のニーズに応える会社です。</p>
+                </div>
+            </div>
+
+            <div class="w-full h-full min-h-[350px] md:min-h-[500px]">
+                <img src="SUNRAY_illustration.jpg" alt="SUNRAY Swimming Pool Illustration" class="w-full h-full object-cover">
+            </div>
+
+        </section>
+
+        <section id="products" class="py-16 px-4">
+            <div class="max-w-5xl mx-auto">
+                
+                <div class="text-center mb-8">
+                    <h3 class="text-sm font-bold tracking-widest text-sunrayBtnBlue uppercase mb-1">Our Products</h3>
+                    <p class="text-2xl font-bold text-gray-800 tracking-wide">SUNRAYの取り扱い商品をご紹介</p>
+                </div>
+
+                <div class="space-y-6">
+                    
+                    <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm product-hover text-center">
+                        <h4 class="text-lg font-bold text-sunrayBtnBlue mb-6 tracking-wide">水泳・トレーニング用品</h4>
+                        
+                        <div class="grid grid-cols-3 sm:grid-cols-6 gap-4 items-center justify-center">
+                            <div class="flex justify-center"><img src="cleaner1.jpg" alt="プールクリーナー1" class="max-h-24 object-contain"></div>
+                            <div class="flex justify-center"><img src="beatboard.jpg" alt="ビート板" class="max-h-24 object-contain"></div>
+                            <div class="flex justify-center"><img src="lanemarker.jpg" alt="レーンマーカー" class="max-h-24 object-contain"></div>
+                            <div class="flex justify-center"><img src="poolfloor.jpg" alt="プールフロア" class="max-h-24 object-contain"></div>
+                            <div class="flex justify-center"><img src="winder.jpg" alt="巻取器" class="max-h-24 object-contain"></div>
+                            <div class="flex justify-center"><img src="cleaner2.jpg" alt="プールクリーナー2" class="max-h-24 object-contain"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm product-hover flex flex-col justify-between">
+                            <div class="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-gray-100">
+                                <img src="AdobeStock_74761022.jpeg" alt="学校用品" class="w-full h-full object-cover">
+                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded shadow-sm">
+                                    <span class="text-sm font-bold text-sunrayDarkBlue">学校用品</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-sm product-hover flex flex-col justify-between">
+                            <div class="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-gray-100">
+                                <img src="AdobeStock_384098395.jpeg" alt="オリジナルプリントウェア" class="w-full h-full object-cover">
+                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded shadow-sm">
+                                    <span class="text-sm font-bold text-sunrayDarkBlue">オリジナルプリントウェア</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-12 flex flex-col items-center space-y-4 max-w-sm mx-auto">
+                    <a href="company.html" class="w-full bg-sunrayBtnBlue hover:bg-blue-600 text-white font-bold py-4 rounded-full shadow-md text-center tracking-widest text-base transition-colors">
+                        納入実績
+                    </a>
+                    <a href="contact.html" class="w-full bg-sunrayBtnBlue hover:bg-blue-600 text-white font-bold py-4 rounded-full shadow-md text-center tracking-widest text-base transition-colors">
+                        お問い合わせフォームへ
+                    </a>
+                </div>
+
+                <div class="mt-16 border-t border-gray-300 max-w-5xl mx-auto opacity-70"></div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <footer id="company-footer" class="bg-sunrayBlue text-gray-700 pb-12 px-4 text-sm mt-auto">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-4">
+            <div class="space-y-4">
+                <h4 class="text-xl font-bold text-sunrayDarkBlue tracking-wider">株式会社 SUNRAY</h4>
+                <div class="space-y-2 text-gray-600">
+                    <p class="flex items-start"><span class="font-semibold w-12 shrink-0">住所:</span><span>〒790-0863 愛媛県松山市此花町5-32</span></p>
+                    <p class="flex items-center"><span class="font-semibold w-12">TEL:</span><a href="tel:089-907-8580" class="hover:text-sunrayDarkBlue transition-colors">089-907-8580</a></p>
+                    <p class="flex items-center"><span class="font-semibold w-12">FAX:</span><span>089-907-8581</span></p>
+                </div>
+            </div>
+            
+            <div class="md:text-right space-y-4 md:self-end">
+                <div class="flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-xs text-gray-500">
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">個人情報保護方針</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">サイトポリシー</a>
+                </div>
+                <p class="text-xs text-gray-400 tracking-wide pt-4 border-t border-gray-200/60 md:border-none">
+                    Copyright&copy; 株式会社 SUNRAY All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-12 border-t border-gray-300/60 max-w-5xl mx-auto"></div>
+    </footer>
+
+</body>
+</html>

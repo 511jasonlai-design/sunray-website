@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin Series - 株式会社 SUNRAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        sunrayBlue: '#e1f0fa',      /* 淺天藍色背景 */
+                        sunrayDarkBlue: '#005bac',  /* 品牌深藍色 */
+                        sunrayBtnBlue: '#007ae6',   /* 飽和亮藍色 */
+                        sunrayText: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 下拉選單過渡動畫 */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-sunrayBlue text-sunrayText antialiased flex flex-col min-h-screen">
+
+    <!-- 導覽列 -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider text-sunrayDarkBlue">SUNRAY</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600 h-full items-center">
+                <div class="relative group h-full flex items-center">
+                    <a href="products.html" class="text-sunrayDarkBlue font-bold border-b-2 border-sunrayDarkBlue pb-1 flex items-center space-x-1">
+                        <span>Our Products</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 w-[520px] bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50">
+                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-semibold text-left">
+                            <a href="pool-robot.html" class="text-sunrayDarkBlue font-bold hover:bg-gray-50 p-2 rounded transition-colors">– プールロボット</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– オリジナルプリントウェア</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– スイムキャップ</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– プールクリーナー</a>
+                            <a href="lane-maker.html" class="text-sunrayDarkBlue font-bold hover:bg-gray-50 p-2 rounded transition-colors">– レーンマーカー</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– 感染予防対策アイテム</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– 学校用品</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– ビート板</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– プールフロア</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-gray-300">|</span>
+                <a href="company.html" class="hover:text-sunrayDarkBlue transition-colors">Company Info</a>
+                <span class="text-gray-300">|</span>
+                <a href="contact.html" class="hover:text-sunrayDarkBlue transition-colors">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 上半部：滿版左右對照視覺區 -->
+    <section class="w-full bg-[#007ae6] grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
+        <div class="flex flex-col justify-between items-center text-center text-white py-12 px-6 md:px-12">
+            <div></div>
+            <div class="space-y-4">
+                <p class="text-base font-bold tracking-wider opacity-90">Product 01</p>
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight">Pool Robot</h1>
+                <p class="text-sm font-bold tracking-wide opacity-95 pb-4">プールロボット</p>
+                <div class="text-sm md:text-base leading-loose tracking-wide font-medium max-w-[380px] mx-auto space-y-2 opacity-95">
+                    <p>ドルフィンシリーズは、</p>
+                    <p>JCE OVERSEAS が提供する高性能な</p>
+                    <p>プール清掃・維持管理ロボットです。</p>
+                    <p>複数のモデルを用意し、</p>
+                    <p>25mプール ～ 50mプールの</p>
+                    <p>様々な規模に対応しています。</p>
+                </div>
+            </div>
+            <div>
+                <img src="SUNRAY_white2.PNG" alt="SUNRAY Logo" class="w-44 h-44 object-contain mx-auto opacity-95">
+            </div>
+        </div>
+        <div class="w-full h-full min-h-[300px] md:min-h-full overflow-hidden">
+            <img src="ACE.jpg" alt="Dolphin ACE 水中清掃" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- 下半部：橫向橫幅卡片清單 (依圖片格式重構) -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 pt-8 pb-20 w-full space-y-6">
+        
+        <!-- 頂部型號搜尋列 -->
+        <div class="flex justify-end w-full mb-2">
+            <div class="relative w-full max-w-[260px] border-b border-gray-400 py-1 flex items-center">
+                <input type="text" placeholder="型番・キーワード" class="w-full bg-transparent text-xs font-medium text-gray-700 outline-none placeholder-gray-400">
+                <svg class="w-4 h-4 text-gray-700 cursor-pointer ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 卡片 1: Dolphin ROYAL-50 -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (預留JPG) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_ROYAL_50.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin ROYAL-50</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンロイヤル 50m プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">ROYAL-50</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">4・6・8 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥1,450,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">40m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D400mm &times; H285mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">25m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">10.0kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 2: Dolphin ROYAL-25 -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (預留JPG) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_ROYAL_25.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin ROYAL-25</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンロイヤル 25m プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">ROYAL-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">4・6・8 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥950,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D400mm &times; H285mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">25m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">10.0kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 3: Dolphin ACE-50 -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_ACE_50.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin ACE-50</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンエース 50m プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">ACE-50</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">4・6・8 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥950,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">40m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D400mm &times; H285mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">10.0kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 卡片 4: Dolphin ACE-25 -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_ACE_25.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin ACE-25</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンエース 25m プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">ACE-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">4・6・8 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥850,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D400mm &times; H285mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">10.0kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 5: Dolphin MARCRO alpha-25R -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_MACROa25R.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin MACROα R</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンマクロα 25m プール用リモコン対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">MACROα-25R</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">2・3・4 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥800,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D430mm &times; H280mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font   -medium">10.9kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 卡片 6: Dolphin MARCRO alpha-25 -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_MACROa25.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin MACROα</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンマクロα 25m プール用リモコン非対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">MACROα-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">2・3・4 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥750,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D430mm &times; H280mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">10.9kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 7: Dolphin MACROLED R -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_MACROLEDR.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin MACROLED R</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンマクロLED 25m プール用リモコン対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">MACROLED-25R</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">2.5 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥750,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D430mm &times; H280mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">9.7kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 8: Dolphin MACROLED -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_MACROLED.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin MACROLED</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンマクロLED 25m プール用非リモコン対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">MACROLED-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">2.5 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥700,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W390mm &times; D430mm &times; H280mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">20m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">9.7kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 9: Dolphin GYRO R -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_GYROR.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin GYRO R</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンGYRO 25m プール用リモコン対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">GYRO-25R</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">3 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥650,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W400mm &times; D400mm &times; H220mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">17m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">9.6kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 10: Dolphin GYRO  -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_GYRO.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin GYRO</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンGYRO 25m プール用非リモコン対応</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">GYRO-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">3 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥600,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W400mm &times; D400mm &times; H220mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">17m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">9.6kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 11: Dolphin MOBY  -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_MOBY.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin MOBY</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンMOBY 25m プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">MOBY-25</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">3 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥550,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">30m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W410mm &times; D420mm &times; H220mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">17m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">7.5kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 12: Dolphin FUSION  -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <!-- 左側商品圖片方框 (對應圖片中帶有TOP画像指示的項目) -->
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="Dolphin_FUSION.png" alt="Dolphin ACE-50" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 中間產品名稱與規格表 -->
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">Dolphin FUSION</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">ドルフィンフュージョン 50m プール・大型プール用</p>
+                    </div>
+                </div>
+                <!-- 雙欄規格數據 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1.5 text-xs text-gray-700">
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">品番</span><span class="font-medium">FUSION</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">作動時間</span><span class="font-medium">4・6・8 時間</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">価格</span><span class="font-semibold">¥2,100,000 (税別)</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">ケーブル長</span><span class="font-medium">40m</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">サイズ</span><span class="font-medium">W800mm &times; D400mm &times; H285mm</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">濾過能力</span><span class="font-medium">40m³/h</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">重量</span><span class="font-medium">20.0kg</span></div>
+                    <div class="flex"><span class="w-20 font-bold text-gray-400">付属品</span><span class="font-medium">リモコン・キャディ付</span></div>
+                </div>
+            </div>
+            <!-- 右側詢價與詳細文件按鈕 -->
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <svg class="w-8 h-8 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.159 13.56l-3.303-3.303m0 0a3.124 3.124 0 114.417 4.417l-3.303-3.303z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-0.5">詳細</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 中間裝飾底部分隔線 -->
+        <div class="mt-20 border-t border-gray-300 max-w-5xl mx-auto opacity-70"></div>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer id="company" class="bg-sunrayBlue text-gray-700 pb-12 px-4 text-sm mt-auto">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-4">
+            <div class="space-y-4">
+                <h4 class="text-xl font-bold text-sunrayDarkBlue tracking-wider">株式会社 SUNRAY</h4>
+                <div class="space-y-2 text-gray-600">
+                    <p class="flex items-start"><span class="font-semibold w-24 shrink-0">本社:</span><span>〒790-0863 愛媛県松山市此花町5-32</span></p>
+                    <p class="flex items-start"><span class="font-semibold w-24 shrink-0">水泳事業部:</span><span>〒790-0811 愛媛県松山市本町3丁目4-5</span></p>
+                    <p class="flex items-center"><span class="font-semibold w-24 shrink-0">TEL:</span><a href="tel:089-907-8580" class="hover:text-sunrayDarkBlue transition-colors">089-907-8580</a></p>
+                    <p class="flex items-center"><span class="font-semibold w-24 shrink-0">FAX:</span><span>089-907-8581</span></p>
+                </div>
+            </div>
+            <div class="md:text-right space-y-4 md:self-end">
+                <div class="flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-xs text-gray-500">
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">個人情報保護方針</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">サイトポリシー</a>
+                </div>
+                <p class="text-xs text-gray-400 tracking-wide pt-4 border-t border-gray-200/60 md:border-none">
+                    Copyright&copy; 株式会社 SUNRAY All Rights Reserved.
+                </p>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-300/60 max-w-5xl mx-auto"></div>
+    </footer>
+
+</body>
+</html>

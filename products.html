@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - 株式会社 SUNRAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        sunrayBlue: '#e1f0fa',      /* 淺天藍色背景 */
+                        sunrayDarkBlue: '#005bac',  /* 品牌深藍色 */
+                        sunrayBtnBlue: '#007ae6',   /* 飽和藍色 / 圖片中的亮藍色 */
+                        sunrayText: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 網格卡片懸停微動效 */
+        .product-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px -10px rgba(0, 91, 172, 0.15);
+        }
+
+        /* 下拉選單顯示/隱藏的過渡動畫 */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-sunrayBlue text-sunrayText antialiased flex flex-col min-h-screen">
+
+    <!-- 導覽列 -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- 點擊品牌 Logo 回到首頁 -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider text-sunrayDarkBlue">SUNRAY</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600 h-full items-center">
+                
+                <!-- Our Products 下拉選單 -->
+                <div class="relative group h-full flex items-center">
+                    <a href="products.html" class="text-sunrayDarkBlue font-bold border-b-2 border-sunrayDarkBlue pb-1 flex items-center space-x-1">
+                        <span>Our Products</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+
+                    <!-- 下拉選單選窗 -->
+                    <div class="dropdown-menu absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 w-[520px] bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50">
+                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-semibold text-left">
+                            <a href="pool-robot.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールロボット</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・オリジナルプリントウェア</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・スイムキャップ</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールクリーナー</a>
+                            <a href="lane-maker.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・レーンマーカー</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・感染予防対策アイテム</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・学校用品</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・ビート板</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">・プールフロア</a>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="text-gray-300">|</span>
+                <a href="company.html" class="hover:text-sunrayDarkBlue transition-colors">Company Info</a>
+                <span class="text-gray-300">|</span>
+                <a href="contact.html" class="hover:text-sunrayDarkBlue transition-colors">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主標題區 -->
+    <section class="bg-sunrayBlue pt-12 pb-6 text-center px-4">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-sm font-bold tracking-widest text-sunrayDarkBlue uppercase mb-1">Our Products</h1>
+            <p class="text-2xl font-bold text-gray-800 tracking-wide">商品ラインアップ</p>
+        </div>
+    </section>
+
+    <!-- 商品列表區（純白卡牌樣式） -->
+    <main class="flex-grow bg-sunrayBlue pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 justify-items-center">
+                
+                <!-- 01 プールロボット -->
+                <a href="pool-robot.html" class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8 block cursor-pointer">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">01</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <img src="AdobeStock_446222159.jpeg" alt="プールロボット" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Pool Robot</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">プールロボット</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                プールをきれいに清掃するロボット。高い吸引力、ブラッシング能力、世界唯一のコードレス、ケーブルからみ防止装置を搭載したドルフィンシリーズ。
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 02 レーンマーカー -->
+                <a href="lane-maker.html" class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8 block cursor-pointer">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">02</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <img src="RL-110H+.jpg" alt="レーンマーカー" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Lane Maker</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">レーンマーカー</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                (公財)日本水泳連盟公認のレーンマーカーシリーズ。優れた消波効果と安全性、豊富なバリエーションであらゆるニーズにお応え致します。
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 03 プールフロア -->
+                <div class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">03</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <img src="red-platform.jpg" alt="プールフロア" class="max-h-full max-w-full object-contain" onerror="this.src='SUNRAY_illustration.jpg'; this.style.objectFit='cover';">
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Pool Floor</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">プールフロア</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                プールの水深を自由にコントロール。プールフロアを使用することで安全に幼児の指導が行えます。またウォーキングレーンとしての水中運動にも最適です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 プールクリーナー -->
+                <div class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">04</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <img src="RM-B1.jpg" alt="プールクリーナー" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Pool Cleaner</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">プールクリーナー</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                高性能な濾過・洗浄システムを備え、日常のプール管理を劇的に効率化。大型施設から学校のプールまで、最適な水質を維持するためのクリーニング設備です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 ビート板 -->
+                <div class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">05</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <img src="RB-R.jpg" alt="ビート板" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Kickboard</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">ビート板</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                ビート板を利用しての水泳指導、浮島による遊び感覚での基礎体力づくり、ジョイポールを利用したエクササイズ。指導用品も充実しています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06 スイムキャップ -->
+                <div class="w-full max-w-[350px] bg-white rounded-[180px_180px_24px_24px] overflow-hidden shadow-md product-item flex flex-col text-center pb-8">
+                    <div class="pt-10 pb-4 px-6 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-gray-800 mb-4 tracking-wide">06</span>
+                        <div class="w-full aspect-square max-w-[220px] flex items-center justify-center">
+                            <div class="text-gray-300 text-xs font-medium border border-dashed border-gray-200 rounded-full p-8 bg-gray-50/50">Swim Cap Image</div>
+                        </div>
+                    </div>
+                    <div class="px-6 mt-2 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-[#007ae6] tracking-wide mb-1">Swim Cap</h3>
+                            <div class="text-sm font-bold text-[#007ae6] mb-4">スイムキャップ</div>
+                            <p class="text-sm text-gray-600 leading-relaxed text-left px-1">
+                                伸縮性と耐久性に優れた高品質なスイムキャップ。学校の授業用からフィットネス、競技用まで、幅広いカラーバリエーションとサイズ展開を取り揃えています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 中間分隔線 -->
+            <div class="mt-20 border-t border-gray-300 max-w-5xl mx-auto opacity-70"></div>
+            
+        </div>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer id="company-footer" class="bg-sunrayBlue text-gray-700 pb-12 px-4 text-sm mt-auto">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-4">
+            <div class="space-y-4">
+                <h4 class="text-xl font-bold text-sunrayDarkBlue tracking-wider">株式会社 SUNRAY</h4>
+                <div class="space-y-2 text-gray-600">
+                    <p class="flex items-start"><span class="font-semibold w-12 shrink-0">住所:</span><span>〒790-0863 愛媛県松山市此花町5-32</span></p>
+                    <p class="flex items-center"><span class="font-semibold w-12">TEL:</span><a href="tel:089-907-8580" class="hover:text-sunrayDarkBlue transition-colors">089-907-8580</a></p>
+                    <p class="flex items-center"><span class="font-semibold w-12">FAX:</span><span>089-907-8581</span></p>
+                </div>
+            </div>
+            
+            <div class="md:text-right space-y-4 md:self-end">
+                <div class="flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-xs text-gray-500">
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">個人情報保護方針</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="hover:text-sunrayDarkBlue transition-colors">サイトポリシー</a>
+                </div>
+                <p class="text-xs text-gray-400 tracking-wide pt-4 border-t border-gray-200/60 md:border-none">
+                    Copyright&copy; 株式会社 SUNRAY All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+        <!-- 最底部裝飾分隔線 -->
+        <div class="mt-12 border-t border-gray-300/60 max-w-5xl mx-auto"></div>
+    </footer>
+
+</body>
+</html>
