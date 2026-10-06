@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Floor - 株式会社 SUNRAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        sunrayBlue: '#e1f0fa',
+                        sunrayDarkBlue: '#005bac',
+                        sunrayBtnBlue: '#007ae6',
+                        sunrayText: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-sunrayBlue text-sunrayText antialiased flex flex-col min-h-screen">
+
+    <!-- 導覽列 -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="SUNRAY_blue.png" alt="株式会社 SUNRAY" class="h-8 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600 h-full items-center">
+                <div class="relative group h-full flex items-center">
+                    <a href="products.html" class="text-sunrayDarkBlue font-bold border-b-2 border-sunrayDarkBlue pb-1 flex items-center space-x-1">
+                        <span>Our Products</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 w-[520px] bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50">
+                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-semibold text-left">
+                            <a href="pool-robot.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– プールロボット</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– オリジナルプリントウェア</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– スイムキャップ</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– プールクリーナー</a>
+                            <a href="lane-maker.html" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– レーンマーカー</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– 感染予防対策アイテム</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– 学校用品</a>
+                            <a href="#" class="text-gray-700 hover:text-sunrayDarkBlue hover:bg-gray-50 p-2 rounded transition-colors">– ビート板</a>
+                            <a href="pool-floor.html" class="text-sunrayDarkBlue font-bold hover:bg-gray-50 p-2 rounded transition-colors">– プールフロア</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-gray-300">|</span>
+                <a href="company.html" class="hover:text-sunrayDarkBlue transition-colors">Company Info</a>
+                <span class="text-gray-300">|</span>
+                <a href="contact.html" class="hover:text-sunrayDarkBlue transition-colors">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 上半部：滿版左右對照視覺區 -->
+    <section class="w-full bg-[#007ae6] grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
+        <div class="flex flex-col justify-between items-center text-center text-white py-12 px-6 md:px-12">
+            <div></div>
+            <div class="space-y-4">
+                <p class="text-base font-bold tracking-wider opacity-90">Product 02</p>
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight">Pool Floor</h1>
+                <p class="text-sm font-bold tracking-wide opacity-95 pb-4">プールフロア</p>
+                <div class="text-sm md:text-base leading-loose tracking-wide font-medium max-w-[380px] mx-auto space-y-2 opacity-95">
+                    <p>安全で快適なプール環境を創出する</p>
+                    <p>高品質なプールフロアです。</p>
+                    <p>折りたたみ式やVS型、N型など、</p>
+                    <p>施設のニーズに合わせて</p>
+                    <p>多様なサイズをご用意しています。</p>
+                </div>
+            </div>
+            <div>
+                <img src="SUNRAY_white2.PNG" alt="SUNRAY Logo" class="w-44 h-44 object-contain mx-auto opacity-95">
+            </div>
+        </div>
+        <div class="w-full h-full min-h-[300px] md:min-h-full overflow-hidden">
+            <img src="pool_floor_main.jpg" alt="Pool Floor 樣貌" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- 下半部：橫向清單 -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 pt-8 pb-20 w-full space-y-6">
+        
+        <!-- 頂部型號搜尋列 -->
+        <div class="flex justify-end w-full mb-2">
+            <div class="relative w-full max-w-[260px] border-b border-gray-400 py-1 flex items-center">
+                <input type="text" placeholder="品番・キーワード" class="w-full bg-transparent text-xs font-medium text-gray-700 outline-none placeholder-gray-400">
+                <svg class="w-4 h-4 text-gray-700 cursor-pointer ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 1. SRF H Pool Floor -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="SRF-H2.jpg" alt="SRF H Pool Floor" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">SRF H Pool Floor</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">折りたたみプールフロア 四方側板付き</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-xs text-gray-700">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-H2</span></div>
+                        <div class="md:col-span-5 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;1,000&times;400mm</span></div>
+                        <div class="md:col-span-4 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥130,900 (税別)</span></div>
+                        <div class="md:col-span-12 flex pt-1 border-t border-gray-200 md:border-t-0 md:pt-0"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">36kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-H1.5</span></div>
+                        <div class="md:col-span-5 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">1,500&times;1,000&times;400mm</span></div>
+                        <div class="md:col-span-4 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥101,000 (税別)</span></div>
+                        <div class="md:col-span-12 flex pt-1 border-t border-gray-200 md:border-t-0 md:pt-0"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">27kg</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <!-- 更換為清晰的查看詳細圖標 -->
+                    <svg class="w-6 h-6 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-1">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SRF-VS Pool Floor (無側板) -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="SRF_VS.jpg" alt="SRF-VS Pool Floor" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">SRF-VS Pool Floor</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">VS型プールフロア</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-xs text-gray-700">
+                    <!-- 重構欄位分配，確保 品番、尺寸、價格、重量 互不重疊 -->
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS1</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">1,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥87,700 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">19kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS2</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥118,300 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">32kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS3</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">3,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥164,500 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">48kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS4</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">4,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥214,300 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">60kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS6</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;600&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥94,300 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">25kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS8</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;800&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥103,700 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">28kg</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <!-- 更換為清晰的查看詳細圖標 -->
+                    <svg class="w-6 h-6 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-1">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SRF-VS Pool Floor (四方側板付き) -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="SRF_VS1T.jpg" alt="SRF-VS Pool Floor 四方側板付き" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">SRF-VS Pool Floor</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">VS型プールフロア 四方側板付き</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-xs text-gray-700">
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS1T</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">1,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥113,500 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">21kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS2T</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥150,500 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">35kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS3T</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">3,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥206,200 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">52kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS4T</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">4,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥266,400 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">65kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-VS8T</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;800&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥136,000 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">31kg</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <!-- 更換為清晰的查看詳細圖標 -->
+                    <svg class="w-6 h-6 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-1">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SRF-N Pool Floor (四方側板付き) -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="SRF-N.jpg" alt="SRF-N Pool Floor 四方側板付き" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">SRF-N Pool Floor</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">N型プールフロア 四方側板付き</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-xs text-gray-700">
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-N1</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">1,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥95,600 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">19kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-N2</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥128,500 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">32kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-N3</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">3,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥179,500 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">48kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-N4</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">4,000&times;1,000&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥228,100 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">61kg</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-N8</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;800&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥120,000 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">28kg</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <!-- 更換為清晰的查看詳細圖標 -->
+                    <svg class="w-6 h-6 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-1">詳細</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. SRF-LS Pool Floor -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-stretch justify-between gap-6">
+            <div class="border border-gray-200 rounded p-4 flex items-center justify-center w-full md:w-[180px] shrink-0 min-h-[160px] bg-white">
+                <img src="SRF_L5.jpg" alt="SRF-LS Pool Floor" class="max-h-full max-w-full object-contain">
+            </div>
+            <!-- 改為 flex-col，拿掉 justify-between，讓內容自然靠上 -->
+            <div class="flex-grow flex flex-col">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-3">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#007ae6]">SRF-LS Pool Floor</h2>
+                        <p class="text-xs font-medium text-gray-500 mt-0.5">L型軽量タイプ プールフロア側板無</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-xs text-gray-700">
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-2 items-center bg-gray-50 p-2.5 rounded">
+                        <div class="col-span-2 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">品番:</span><span class="font-medium text-sunrayDarkBlue">SRF-L5</span></div>
+                        <div class="col-span-4 md:col-span-4 flex whitespace-nowrap"><span class="font-bold text-gray-400 mr-2">サイズ:</span><span class="font-medium">2,000&times;500&times;400mm</span></div>
+                        <div class="col-span-4 md:col-span-3 flex"><span class="font-bold text-gray-400 mr-2">価格:</span><span class="font-semibold">¥85,200 (税別)</span></div>
+                        <div class="col-span-2 md:col-span-2 flex"><span class="font-bold text-gray-400 mr-2">重量:</span><span class="font-medium">17kg</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-[110px] shrink-0 flex flex-col justify-between items-center md:items-end pt-2 md:pt-0">
+                <a href="contact.html" class="w-full bg-[#007ae6] text-white text-center py-3 rounded-full font-bold text-[10px] leading-tight hover:bg-blue-600 transition-colors shadow-sm">お問い合わせ<br>お見積もり</a>
+                <div class="flex flex-col items-center mt-4 md:mt-0 cursor-pointer group">
+                    <!-- 更換為清晰的查看詳細圖標 -->
+                    <svg class="w-6 h-6 text-[#007ae6] group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-[#005bac] mt-1">詳細</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
+        <p>&copy; SUNRAY Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
